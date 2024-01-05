@@ -5,6 +5,7 @@ import { useState } from "react";
 import { addItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 
+
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -30,6 +31,9 @@ const Home = () => {
   } = useQuery("categories", async () => {
     return await axios.get(`https://fakestoreapi.com/products/categories`);
   });
+
+
+
 
   if (productsLoading || categoriesLoading) {
     return (
@@ -118,7 +122,7 @@ const Home = () => {
 
                     <button
                       onClick={() => handleAddItem(product)}
-                      className="flex items-center justify-center w-full px-2 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
+                      className=" flex  items-center justify-center w-full px-2 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -133,6 +137,7 @@ const Home = () => {
                   </div>
                 ))}
               </div>
+              
             </div>
           </div>
         </div>

@@ -20,7 +20,7 @@ const Home = () => {
     error: productsError,
   } = useQuery(["products", currentPage], async () => {
     return await axios.get(
-      `https://fakestoreapi.com/products?limit=8&page=${currentPage}`
+      `https://fakestoreapi.com/products`
     );
   });
 
